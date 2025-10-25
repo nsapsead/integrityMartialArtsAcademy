@@ -263,7 +263,7 @@ const Hero = () => {
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
           lineHeight: 1.2
         }}>
-          Martial Arts Training in Eltham | BJJ & Self-Defence Academy
+          BJJ, Kickboxing, Combatives & Self Defence
         </h2>
 
         <p style={{
