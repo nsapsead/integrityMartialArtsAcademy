@@ -149,10 +149,9 @@ const About = () => {
             {credentials.map((credential, index) => (
               <div key={index} style={{
                 background: 'white',
-          boxShadow: '0 4px 6px -1px rgba(49, 191, 49, 0.1)',
                 padding: '1.5rem',
                 borderRadius: '0.75rem',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                boxShadow: '0 4px 6px -1px rgba(49, 191, 49, 0.1)',
                 textAlign: 'center',
                 transition: 'all 0.3s ease'
               }}
