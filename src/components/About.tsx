@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 const About = () => {
   const credentials = [
     { title: "Black Belt in Brazilian Jiu Jitsu", subtitle: "Will-Machado BJJ Australasia" },
@@ -31,6 +33,27 @@ const About = () => {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
           }}>About Craig Donaldson - BJJ Black Belt Instructor in Eltham</h2>
+          
+          {/* SEO-optimized instructor image */}
+          <div style={{
+            marginBottom: '2rem',
+            display: 'flex',
+            justifyContent: 'center'
+          }}>
+            <Image
+              src="/images/craig-donaldson.png"
+              alt="Craig Donaldson BJJ Black Belt Instructor at Integrity Martial Arts Academy Eltham Victoria - Brazilian Jiu Jitsu training and self defence classes"
+              width={300}
+              height={300}
+              style={{
+                borderRadius: '50%',
+                objectFit: 'cover',
+                boxShadow: '0 8px 25px rgba(49, 191, 49, 0.3)',
+                border: '4px solid #31bf31'
+              }}
+            />
+          </div>
+          
           <p style={{
             fontSize: '1.25rem',
             color: '#888888',

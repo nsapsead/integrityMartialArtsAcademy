@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 const Programs = () => {
   const programs = [
     {
@@ -125,7 +127,22 @@ const Programs = () => {
                 backgroundRepeat: 'no-repeat',
                 opacity: '0.15',
                 zIndex: '1'
-              }}></div>
+              }}>
+                {/* SEO-optimized hidden image for search engines */}
+                <Image
+                  src={program.image}
+                  alt={`${program.title} classes at Integrity Martial Arts Academy Eltham Victoria - ${program.ages} martial arts training program`}
+                  width={1}
+                  height={1}
+                  style={{
+                    position: 'absolute',
+                    width: '1px',
+                    height: '1px',
+                    opacity: 0,
+                    pointerEvents: 'none'
+                  }}
+                />
+              </div>
 
               {/* Dark Overlay */}
               <div style={{

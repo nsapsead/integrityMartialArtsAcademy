@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 
 const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,8 +12,19 @@ const Hero = () => {
       setIsScrolled(scrollTop > 100) // Show popup after scrolling 100px
     }
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    // Check initial screen size
+    handleResize()
+
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
   return (
     <section id="home" style={{
@@ -34,7 +46,20 @@ const Hero = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         opacity: 0.5
-      }}></div>
+      }}>
+        {/* SEO-optimized hidden image for search engines */}
+        <img 
+          src="/images/hero-background-alt.jpg" 
+          alt="Integrity Martial Arts Academy Eltham - Brazilian Jiu Jitsu training facility with students practicing martial arts techniques in modern gym setting"
+          style={{
+            position: 'absolute',
+            width: '1px',
+            height: '1px',
+            opacity: 0,
+            pointerEvents: 'none'
+          }}
+        />
+      </div>
       
       {/* Dark Overlay */}
       <div style={{
@@ -173,7 +198,7 @@ const Hero = () => {
                    backgroundClip: 'text',
                    textShadow: 'none'
                  }}>
-                   Martial Arts Training in Eltham | Integrity MMA Academy
+                   Train with Integrity
                  </span>
                 
                 {/* Elegant underline accent */}
@@ -229,6 +254,18 @@ const Hero = () => {
                 }}></span>
               </h1>
         
+        {/* SEO-optimized H2 subtitle */}
+        <h2 style={{
+          fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+          fontWeight: '600',
+          marginBottom: '1rem',
+          color: '#31bf31',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+          lineHeight: 1.2
+        }}>
+          Martial Arts Training in Eltham | BJJ & Self-Defence Academy
+        </h2>
+
         <p style={{
           fontSize: 'clamp(1.25rem, 3vw, 1.5rem)',
           marginBottom: '2rem',
@@ -246,8 +283,8 @@ const Hero = () => {
       </div>
 
 
-      {/* Floating Special Offer Popup */}
-      {isScrolled && (
+      {/* Desktop Floating Special Offer Popup */}
+      {isScrolled && !isMobile && (
         <div style={{
           position: 'fixed',
           bottom: '20px',
@@ -355,6 +392,126 @@ const Hero = () => {
               borderRadius: '50%',
               cursor: 'pointer',
               fontSize: '20px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+            onMouseEnter={(e) => {
+              const target = e.target as HTMLElement
+              target.style.background = 'rgba(255, 255, 255, 0.3)'
+            }}
+            onMouseLeave={(e) => {
+              const target = e.target as HTMLElement
+              target.style.background = 'rgba(255, 255, 255, 0.2)'
+            }}
+          >
+            ×
+          </button>
+        </div>
+      )}
+
+      {/* Mobile Floating Special Offer Popup */}
+      {isScrolled && isMobile && (
+        <div style={{
+          position: 'fixed',
+          bottom: '0',
+          left: '0',
+          right: '0',
+          background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
+          color: 'white',
+          padding: '1rem',
+          zIndex: 1000,
+          animation: 'slideInUp 0.5s ease-out, pulse 2s ease-in-out infinite 1s',
+          borderTop: '3px solid #ff4500',
+          boxShadow: '0 -4px 20px rgba(255, 107, 53, 0.4)',
+          cursor: 'pointer'
+        }}
+        onClick={() => {
+          window.open('https://sparkpages.io/?i=_e0zb', '_blank')
+        }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            maxWidth: '100%'
+          }}>
+            {/* Left side - Offer details */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              flex: 1
+            }}>
+              <span style={{ fontSize: '1.5rem' }}>🔥</span>
+              <div>
+                <div style={{
+                  fontSize: '0.9rem',
+                  fontWeight: 'bold',
+                  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
+                  marginBottom: '0.25rem'
+                }}>
+                  LIMITED TIME
+                </div>
+                <div style={{
+                  fontSize: '1.1rem',
+                  fontWeight: 'bold',
+                  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)'
+                }}>
+                  5 CLASSES for just <span style={{
+                    color: '#ffeb3b',
+                    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+                    animation: 'bounce 1s ease-in-out infinite'
+                  }}>$25</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right side - CTA button */}
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.9)',
+              color: '#ff6b35',
+              padding: '0.75rem 1.25rem',
+              borderRadius: '20px',
+              fontWeight: 'bold',
+              fontSize: '0.9rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              transition: 'all 0.3s ease',
+              whiteSpace: 'nowrap',
+              marginLeft: '0.5rem'
+            }}
+            onMouseEnter={(e) => {
+              const target = e.target as HTMLElement
+              target.style.background = 'rgba(255, 255, 255, 1)'
+              target.style.transform = 'scale(1.05)'
+            }}
+            onMouseLeave={(e) => {
+              const target = e.target as HTMLElement
+              target.style.background = 'rgba(255, 255, 255, 0.9)'
+              target.style.transform = 'scale(1)'
+            }}>
+              CLAIM NOW!
+            </div>
+          </div>
+          
+          {/* Close button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              setIsScrolled(false)
+            }}
+            style={{
+              position: 'absolute',
+              top: '8px',
+              right: '8px',
+              background: 'rgba(255, 255, 255, 0.2)',
+              border: 'none',
+              color: 'white',
+              width: '28px',
+              height: '28px',
+              borderRadius: '50%',
+              cursor: 'pointer',
+              fontSize: '16px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
