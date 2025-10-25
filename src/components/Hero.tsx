@@ -68,7 +68,7 @@ const Hero = () => {
         background: 'linear-gradient(135deg, rgba(29, 48, 29, 0.6) 0%, rgba(15, 26, 15, 0.6) 100%)'
       }}></div>
 
-      {/* Special Offer Banner */}
+      {/* Special Offer Banner - Hidden on Mobile */}
       <div style={{
         position: 'absolute',
         top: '100px', // Position below the header
@@ -81,7 +81,8 @@ const Hero = () => {
         zIndex: 15,
         animation: 'slideDown 0.8s ease-out, pulse 2s ease-in-out infinite 1s',
         boxShadow: '0 2px 10px rgba(255, 107, 53, 0.4)',
-        borderBottom: '2px solid #ff4500'
+        borderBottom: '2px solid #ff4500',
+        display: isMobile ? 'none' : 'block' // Hide on mobile
       }}>
         <div style={{
           display: 'flex',
@@ -177,7 +178,7 @@ const Hero = () => {
         color: 'white',
         maxWidth: '1024px',
         padding: '0 1rem',
-        marginTop: '180px' // Increased to account for header + banner
+        marginTop: isMobile ? '120px' : '180px' // Reduced margin on mobile since banner is hidden
       }}>
               <h1 style={{
                 fontSize: 'clamp(3rem, 8vw, 6rem)',
@@ -410,8 +411,8 @@ const Hero = () => {
         </div>
       )}
 
-      {/* Mobile Floating Special Offer Popup */}
-      {isScrolled && isMobile && (
+      {/* Mobile Floating Special Offer Popup - Always visible on mobile */}
+      {isMobile && (
         <div style={{
           position: 'fixed',
           bottom: '0',

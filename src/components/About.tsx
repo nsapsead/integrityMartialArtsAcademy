@@ -68,48 +68,36 @@ const About = () => {
 
             {/* Craig's Profile */}
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '2rem',
-              alignItems: 'center',
+              textAlign: 'center',
               marginBottom: '3rem'
             }}>
-          <div style={{ position: 'relative' }}>
+          <div style={{ padding: '0 1rem' }}>
             <div style={{
-              width: '100%',
-              height: '400px',
-              background: '#e5e7eb',
-              borderRadius: '1rem',
-              overflow: 'hidden',
-              backgroundImage: 'url("/images/craig-donaldson.png")',
-              backgroundSize: 'contain',
-              backgroundPosition: 'center center',
-              backgroundRepeat: 'no-repeat'
-            }}></div>
-            <div style={{
-              position: 'absolute',
-              bottom: '-1.5rem',
-              right: '-1.5rem',
-              width: '96px',
-              height: '96px',
-              background: 'linear-gradient(135deg, #31bf31, #1d301d)',
-              borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '3rem'
+              gap: '1rem',
+              marginBottom: '1rem'
             }}>
-              🏆
+              <h3 style={{
+                fontSize: '2rem',
+                fontWeight: 'bold',
+                color: '#1d301d',
+                margin: 0
+              }}>Craig Donaldson</h3>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                background: 'linear-gradient(135deg, #31bf31, #1d301d)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '1.5rem'
+              }}>
+                🏆
+              </div>
             </div>
-          </div>
-
-          <div style={{ padding: '0 1rem' }}>
-            <h3 style={{
-              fontSize: '2rem',
-              fontWeight: 'bold',
-              color: '#1d301d',
-              marginBottom: '0.5rem'
-            }}>Craig Donaldson</h3>
             <p style={{
               fontSize: '1.25rem',
               color: '#31bf31',
