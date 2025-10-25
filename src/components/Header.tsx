@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -55,12 +56,12 @@ const Header = () => {
                transition: 'height 0.3s ease'
              }}>
           {/* Logo - Centered */}
-               <img 
+               <Image 
                  src={isScrolled ? "/images/logo-small.png" : "/images/logo.png"} 
                  alt="Integrity MMA Logo" 
+                 width={isScrolled ? 60 : 80}
+                 height={isScrolled ? 60 : 80}
                  style={{
-                   width: isScrolled ? '60px' : '80px',
-                   height: isScrolled ? '60px' : '80px',
                    objectFit: 'contain',
                    transition: 'all 0.3s ease'
                  }}

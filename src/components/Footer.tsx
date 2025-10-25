@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 const Footer = () => {
   const quickLinks = [
     { name: 'Home', href: '#home' },
@@ -70,12 +72,12 @@ const Footer = () => {
               justifyContent: 'flex-start',
               marginBottom: '1.5rem'
             }}>
-              <img
+              <Image
                 src="/images/logo.png"
                 alt="Integrity MMA Logo"
+                width={104}
+                height={104}
                 style={{
-                  width: '104px',
-                  height: '104px',
                   objectFit: 'contain'
                 }}
               />

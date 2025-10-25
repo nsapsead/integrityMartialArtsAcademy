@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
+import Image from 'next/image'
 
 const ClassSchedule = () => {
   const ref = useRef(null)
@@ -60,9 +61,11 @@ const ClassSchedule = () => {
           transform: isInView ? 'translateY(0)' : 'translateY(30px)',
           transition: 'all 0.6s ease 0.4s'
         }}>
-          <img 
+          <Image 
             src="/images/Timetable No Logo.png"
-                   alt="Integrity Martial Arts Academy Class Schedule Timetable - Eltham BJJ and Martial Arts Classes"
+            alt="Integrity Martial Arts Academy Class Schedule Timetable - Eltham BJJ and Martial Arts Classes"
+            width={800}
+            height={600}
             style={{
               width: '100%',
               height: 'auto',

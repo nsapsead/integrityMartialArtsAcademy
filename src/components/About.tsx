@@ -8,26 +8,6 @@ const About = () => {
     { title: "3rd Dan Black Belt", subtitle: "Advanced Fighting Arts & Self Defence" },
   ]
 
-  const timeline = [
-    { year: "1974", event: "Craig is born via an epic hip escape" },
-    { year: "1990", event: "Started Australian Freestyle Combat Karate with Sensei Robert Reid" },
-    { year: "1993", event: "Earned Black Belt in Australian Freestyle Combat Karate" },
-    { year: "1993", event: "Started training Brazilian Jiu Jitsu with John Will" },
-    { year: "1994", event: "Earned 1st Dan Black Belt in Advanced Fighting Arts & Self Defence" },
-    { year: "1996", event: "Earned 2nd Dan Black Belt in Advanced Fighting Arts & Self Defence" },
-    { year: "1998", event: "Started private lessons from John Will in BJJ (20+ years)" },
-    { year: "2000", event: "Earned 3rd Dan Black Belt in Advanced Fighting Arts & Self Defence" },
-    { year: "2002", event: "Started instructing Brazilian Jiu Jitsu at Taipan Muay Thai" },
-    { year: "2007", event: "Earned Purple Belt in Brazilian Jiu Jitsu" },
-    { year: "2011", event: "&apos;Integrity BJJ&apos; is introduced as the group&apos;s name" },
-    { year: "2014", event: "Integrity Martial Arts Academy opens" },
-    { year: "2015", event: "Earned Floro Fighting System Level 1 Instructor" },
-    { year: "2016", event: "Earned Brown Belt in Brazilian Jiu Jitsu" },
-    { year: "2018", event: "Earned Black Belt in Brazilian Jiu Jitsu" },
-    { year: "2019", event: "Qualified as KEF-Integrated Combat Instructor" },
-    { year: "2019", event: "Earned Floro Fighting System Level 8 & 9 Instructor" },
-    { year: "2022", event: "Upgraded KEF-Integrated Combat Instructor level to Delta & Echo" },
-  ]
 
   return (
     <section id="about" style={{

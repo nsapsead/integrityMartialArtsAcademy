@@ -133,7 +133,7 @@ const Testimonials = () => {
                 marginBottom: '1.5rem',
                 fontStyle: 'italic'
               }}>
-                "{testimonial.content}"
+                &ldquo;{testimonial.content}&rdquo;
               </p>
 
               {/* Author Info */}

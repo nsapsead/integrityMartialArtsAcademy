@@ -132,7 +132,7 @@ const WhyChooseUs = () => {
             margin: '0 auto',
             lineHeight: 1.7
           }}>
-            We don't just teach martial arts – we transform lives. Experience the difference of training with a master instructor who genuinely cares about your success, in a community that feels like family.
+            We don&apos;t just teach martial arts – we transform lives. Experience the difference of training with a master instructor who genuinely cares about your success, in a community that feels like family.
           </p>
         </div>
 
