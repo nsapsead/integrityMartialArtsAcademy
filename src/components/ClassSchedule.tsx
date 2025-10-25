@@ -168,55 +168,6 @@ const ClassSchedule = () => {
             </div>
           </div>
 
-          <div style={{
-            background: 'linear-gradient(135deg, #31bf31, #1d301d)',
-            borderRadius: '1rem',
-            padding: '2rem',
-            color: 'white',
-            marginTop: '2rem'
-          }}>
-            <h3 style={{
-              fontSize: 'clamp(1.5rem, 4vw, 2rem)',
-              fontWeight: 'bold',
-              marginBottom: '1rem'
-            }}>
-              Ready to Start Training?
-            </h3>
-            <p style={{
-              fontSize: '1.125rem',
-              marginBottom: '1.5rem',
-              maxWidth: '600px',
-              margin: '0 auto 1.5rem auto'
-            }}>
-              Join our classes and experience world-class martial arts instruction. All skill levels welcome!
-            </p>
-            <a href="https://sparkpages.io/?i=_e0zb" target="_blank" style={{
-              background: 'white',
-              color: '#1d301d',
-              padding: '1rem 2rem',
-              borderRadius: '0.5rem',
-              textDecoration: 'none',
-              fontSize: '1.125rem',
-              fontWeight: '700',
-              transition: 'all 0.3s ease',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-              display: 'inline-block'
-            }}
-            onMouseEnter={(e) => {
-              const target = e.target as HTMLElement
-              target.style.transform = 'scale(1.05)'
-              target.style.background = '#e8f5e8'
-              target.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)'
-            }}
-            onMouseLeave={(e) => {
-              const target = e.target as HTMLElement
-              target.style.transform = 'scale(1)'
-              target.style.background = 'white'
-              target.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)'
-            }}>
-              Start Your Trial - $25
-            </a>
-          </div>
         </div>
       </div>
     </section>

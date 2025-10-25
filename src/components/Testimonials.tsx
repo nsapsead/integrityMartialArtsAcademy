@@ -180,57 +180,6 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div style={{
-          textAlign: 'center',
-          padding: '3rem 2rem',
-          background: 'linear-gradient(135deg, #31bf31, #1d301d)',
-          borderRadius: '1rem',
-          boxShadow: '0 10px 25px rgba(49, 191, 49, 0.2)',
-          color: 'white'
-        }}>
-          <h3 style={{
-            fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
-            fontWeight: 'bold',
-            marginBottom: '1rem'
-          }}>
-            Ready to Join Our Community?
-          </h3>
-          <p style={{
-            fontSize: '1.125rem',
-            marginBottom: '2rem',
-            maxWidth: '600px',
-            margin: '0 auto 2rem auto'
-          }}>
-            Experience the same transformation that our students and parents rave about.
-          </p>
-          <a href="https://sparkpages.io/?i=_e0zb" target="_blank" style={{
-            background: 'white',
-            color: '#1d301d',
-            padding: '1rem 2.5rem',
-            borderRadius: '0.5rem',
-            textDecoration: 'none',
-            fontSize: '1.125rem',
-            fontWeight: '700',
-            transition: 'all 0.3s ease',
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-            display: 'inline-block'
-          }}
-          onMouseEnter={(e) => {
-            const target = e.target as HTMLElement
-            target.style.transform = 'scale(1.05)'
-            target.style.background = '#e8f5e8'
-            target.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)'
-          }}
-          onMouseLeave={(e) => {
-            const target = e.target as HTMLElement
-            target.style.transform = 'scale(1)'
-            target.style.background = 'white'
-            target.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)'
-          }}>
-            Start Your Journey Today
-          </a>
-        </div>
       </div>
     </section>
   )

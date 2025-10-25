@@ -177,7 +177,7 @@ const Contact = () => {
                 textAlign: 'center',
                 marginBottom: '2rem'
               }}>
-                This form posts directly to Spark. We've styled it for a polished look.
+                Please fill in your information below and we will be in touch
               </p>
 
               {/* Spark form start */}
