@@ -32,7 +32,7 @@ const About = () => {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
-          }}>About Craig Donaldson - BJJ Black Belt Instructor in Eltham</h2>
+          }}>About Craig Donaldson</h2>
           
           {/* SEO-optimized instructor image */}
           <div style={{
