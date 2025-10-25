@@ -173,7 +173,7 @@ const Hero = () => {
                    backgroundClip: 'text',
                    textShadow: 'none'
                  }}>
-                   Train with Integrity
+                   Martial Arts Training in Eltham | Integrity MMA Academy
                  </span>
                 
                 {/* Elegant underline accent */}
@@ -237,8 +237,8 @@ const Hero = () => {
           margin: '0 auto 2rem auto',
           lineHeight: 1.6
         }}>
-          We&apos;re not just a gym. We teach a mix of traditional and modern martial arts, 
-          self defence, fitness training and general awesomeness.
+          Learn Brazilian Jiu Jitsu, self-defence, and martial arts in Eltham, Victoria with Craig Donaldson. 
+          30+ years experience teaching kids, teens, and adults in a supportive family environment.
         </p>
 
 

@@ -66,17 +66,17 @@ const Programs = () => {
           textAlign: 'center',
           marginBottom: '3rem'
         }}>
-          <h2 style={{
-            fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
-            fontWeight: 'bold',
-            marginBottom: '1.5rem',
-            background: 'linear-gradient(135deg, #31bf31, #1d301d)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}>
-            Our Programs
-          </h2>
+                 <h2 style={{
+                   fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                   fontWeight: 'bold',
+                   marginBottom: '1.5rem',
+                   background: 'linear-gradient(135deg, #31bf31, #1d301d)',
+                   WebkitBackgroundClip: 'text',
+                   WebkitTextFillColor: 'transparent',
+                   backgroundClip: 'text'
+                 }}>
+                   Martial Arts Programs in Eltham | Kids, Teens & Adults
+                 </h2>
           <p style={{
             fontSize: '1.25rem',
             color: '#888888',
@@ -84,7 +84,7 @@ const Programs = () => {
             margin: '0 auto',
             lineHeight: 1.6
           }}>
-            From kids to adults, we offer comprehensive martial arts training programs designed to build confidence, discipline, and real-world self-defense skills.
+            Learn Brazilian Jiu Jitsu, self-defence, and martial arts in Eltham, Victoria. Our programs are designed for kids, teens, and adults to build confidence, discipline, and real-world self-defense skills.
           </p>
         </div>
 

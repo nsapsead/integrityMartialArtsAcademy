@@ -50,7 +50,7 @@ const About = () => {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
-          }}>About</h2>
+          }}>About Craig Donaldson - BJJ Black Belt Instructor in Eltham</h2>
           <p style={{
             fontSize: '1.25rem',
             color: '#888888',
@@ -58,8 +58,8 @@ const About = () => {
             margin: '0 auto',
             lineHeight: 1.6
           }}>
-            Meet Craig Donaldson, the head instructor and owner of Integrity Martial Arts Academy, 
-            with over 30 years of martial arts experience and world-class credentials.
+            Meet Craig Donaldson, BJJ Black Belt and head instructor at Integrity Martial Arts Academy in Eltham, Victoria. 
+            With over 30 years of martial arts experience, Craig teaches Brazilian Jiu Jitsu, self-defence, and martial arts to students of all ages.
           </p>
         </div>
 

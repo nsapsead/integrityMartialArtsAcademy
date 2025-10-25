@@ -49,7 +49,7 @@ const Contact = () => {
             transform: isInView ? 'translateY(0)' : 'translateY(20px)',
             transition: 'all 0.6s ease'
           }}>
-            Contact Us
+            Contact Integrity Martial Arts Academy in Eltham
           </h2>
           <p style={{
             fontSize: '1.25rem',
@@ -105,7 +105,7 @@ const Contact = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Integrity Martial Arts Academy Location"
+                       title="Integrity Martial Arts Academy Location - 2/30 Bridge Street Eltham VIC 3095"
               ></iframe>
             </div>
 
