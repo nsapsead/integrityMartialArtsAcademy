@@ -64,41 +64,6 @@ const Footer = () => {
           gap: '3rem',
           marginBottom: '3rem'
         }}>
-          {/* NerdJitsu Logo */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'flex-start'
-          }}>
-            <a 
-              href="https://www.nerdjitsu.com.au" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                transition: 'transform 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                const target = e.target as HTMLElement
-                target.style.transform = 'translateY(-3px)'
-              }}
-              onMouseLeave={(e) => {
-                const target = e.target as HTMLElement
-                target.style.transform = 'translateY(0)'
-              }}
-            >
-              <Image
-                src="/images/nerdjitsulogotransparent.png"
-                alt="NerdJitsu - Web Development by NerdJitsu"
-                width={120}
-                height={120}
-                style={{
-                  filter: 'brightness(0.9)',
-                  transition: 'filter 0.3s ease'
-                }}
-              />
-            </a>
-          </div>
-          
           {/* Academy Info */}
           <div>
             <div style={{
@@ -368,14 +333,50 @@ const Footer = () => {
           alignItems: 'center',
           gap: '1rem'
         }}>
-                 <p style={{
-                   color: '#e8f5e8',
-                   fontSize: '0.875rem',
-                   margin: 0,
-                   textAlign: 'center'
-                 }}>
-                   © {new Date().getFullYear()} Integrity Martial Arts Academy. All rights reserved.
-                 </p>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '1rem'
+          }}>
+            <p style={{
+              color: '#e8f5e8',
+              fontSize: '0.875rem',
+              margin: 0,
+              textAlign: 'center'
+            }}>
+              © {new Date().getFullYear()} Integrity Martial Arts Academy. All rights reserved.
+            </p>
+            
+            {/* NerdJitsu Logo */}
+            <a 
+              href="https://www.nerdjitsu.com.au" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                transition: 'transform 0.3s ease, opacity 0.3s ease',
+                opacity: 0.8
+              }}
+              onMouseEnter={(e) => {
+                const target = e.target as HTMLElement
+                target.style.transform = 'translateY(-3px)'
+                target.style.opacity = '1'
+              }}
+              onMouseLeave={(e) => {
+                const target = e.target as HTMLElement
+                target.style.transform = 'translateY(0)'
+                target.style.opacity = '0.8'
+              }}
+            >
+              <Image
+                src="/images/nerdjitsulogotransparent.png"
+                alt="NerdJitsu - Web Development"
+                width={40}
+                height={40}
+              />
+            </a>
+          </div>
           
           <div style={{
             display: 'flex',
