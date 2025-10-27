@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     template: "%s | Integrity Martial Arts Academy"
   },
   description: "Professional martial arts training in Eltham, Victoria. Learn Brazilian Jiu Jitsu, self-defence, and fitness with Craig Donaldson. 30+ years experience. All ages welcome. Book your trial today!",
+  icons: {
+    icon: '/favicon.png',
+  },
   keywords: [
     "martial arts Eltham",
     "BJJ Eltham",
