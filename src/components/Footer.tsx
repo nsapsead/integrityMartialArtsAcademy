@@ -336,8 +336,10 @@ const Footer = () => {
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            width: '100%'
+            justifyContent: 'center',
+            gap: '2rem',
+            width: '100%',
+            position: 'relative'
           }}>
             {/* NerdJitsu Logo - Left side */}
             <a 
@@ -363,17 +365,17 @@ const Footer = () => {
               <Image
                 src="/images/nerdjitsulogotransparent.png"
                 alt="NerdJitsu - Web Development"
-                width={40}
-                height={40}
+                width={52}
+                height={52}
               />
             </a>
             
-            {/* Copyright - Right side */}
+            {/* Copyright - Center */}
             <p style={{
               color: '#e8f5e8',
               fontSize: '0.875rem',
               margin: 0,
-              textAlign: 'right'
+              textAlign: 'center'
             }}>
               © {new Date().getFullYear()} Integrity Martial Arts Academy. All rights reserved.
             </p>
