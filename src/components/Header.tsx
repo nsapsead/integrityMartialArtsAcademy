@@ -6,8 +6,6 @@ import Image from 'next/image'
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isClient, setIsClient] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     setIsClient(true)
@@ -16,22 +14,8 @@ const Header = () => {
         setIsScrolled(window.scrollY > 50)
       }
       
-      const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768)
-        if (window.innerWidth > 768) {
-          setIsMenuOpen(false)
-        }
-      }
-      
-      // Check initial screen size
-      handleResize()
-      
       window.addEventListener('scroll', handleScroll)
-      window.addEventListener('resize', handleResize)
-      return () => {
-        window.removeEventListener('scroll', handleScroll)
-        window.removeEventListener('resize', handleResize)
-      }
+      return () => window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 

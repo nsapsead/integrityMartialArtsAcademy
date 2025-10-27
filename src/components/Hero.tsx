@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -48,9 +49,11 @@ const Hero = () => {
         opacity: 0.5
       }}>
         {/* SEO-optimized hidden image for search engines */}
-        <img 
+        <Image 
           src="/images/hero-background-alt.jpg" 
           alt="Integrity Martial Arts Academy Eltham - Brazilian Jiu Jitsu training facility with students practicing martial arts techniques in modern gym setting"
+          width={1}
+          height={1}
           style={{
             position: 'absolute',
             width: '1px',
