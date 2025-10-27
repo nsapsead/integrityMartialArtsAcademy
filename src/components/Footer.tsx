@@ -64,6 +64,41 @@ const Footer = () => {
           gap: '3rem',
           marginBottom: '3rem'
         }}>
+          {/* NerdJitsu Logo */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'flex-start'
+          }}>
+            <a 
+              href="https://www.nerdjitsu.com.au" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                transition: 'transform 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                const target = e.target as HTMLElement
+                target.style.transform = 'translateY(-3px)'
+              }}
+              onMouseLeave={(e) => {
+                const target = e.target as HTMLElement
+                target.style.transform = 'translateY(0)'
+              }}
+            >
+              <Image
+                src="/nerdjitsulogotransparent.png"
+                alt="NerdJitsu - Web Development by NerdJitsu"
+                width={120}
+                height={120}
+                style={{
+                  filter: 'brightness(0.9)',
+                  transition: 'filter 0.3s ease'
+                }}
+              />
+            </a>
+          </div>
+          
           {/* Academy Info */}
           <div>
             <div style={{
