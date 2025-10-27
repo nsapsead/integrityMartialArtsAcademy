@@ -87,7 +87,7 @@ const Footer = () => {
               }}
             >
               <Image
-                src="/nerdjitsulogotransparent.png"
+                src="/images/nerdjitsulogotransparent.png"
                 alt="NerdJitsu - Web Development by NerdJitsu"
                 width={120}
                 height={120}
