@@ -336,19 +336,10 @@ const Footer = () => {
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            gap: '1rem'
+            justifyContent: 'space-between',
+            width: '100%'
           }}>
-            <p style={{
-              color: '#e8f5e8',
-              fontSize: '0.875rem',
-              margin: 0,
-              textAlign: 'center'
-            }}>
-              © {new Date().getFullYear()} Integrity Martial Arts Academy. All rights reserved.
-            </p>
-            
-            {/* NerdJitsu Logo */}
+            {/* NerdJitsu Logo - Left side */}
             <a 
               href="https://www.nerdjitsu.com.au" 
               target="_blank" 
@@ -376,6 +367,16 @@ const Footer = () => {
                 height={40}
               />
             </a>
+            
+            {/* Copyright - Right side */}
+            <p style={{
+              color: '#e8f5e8',
+              fontSize: '0.875rem',
+              margin: 0,
+              textAlign: 'right'
+            }}>
+              © {new Date().getFullYear()} Integrity Martial Arts Academy. All rights reserved.
+            </p>
           </div>
           
           <div style={{
