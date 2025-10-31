@@ -341,47 +341,50 @@ const Footer = () => {
             width: '100%',
             position: 'relative'
           }}>
-            {/* Copyright - Center */}
+            {/* Copyright - Center with NerdJitsu credit */}
             <p style={{
               color: '#e8f5e8',
               fontSize: '0.875rem',
               margin: 0,
-              textAlign: 'center'
+              textAlign: 'center',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem'
             }}>
               © {new Date().getFullYear()} Integrity Martial Arts Academy. All rights reserved.
-            </p>
-            
-            {/* NerdJitsu Logo - Right side */}
-            <a 
-              href="https://www.nerdjitsu.com.au" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                transition: 'transform 0.3s ease, opacity 0.3s ease',
-                opacity: 0.8
-              }}
-              onMouseEnter={(e) => {
-                const target = e.target as HTMLElement
-                target.style.transform = 'translateY(-2px)'
-                target.style.opacity = '0.9'
-              }}
-              onMouseLeave={(e) => {
-                const target = e.target as HTMLElement
-                target.style.transform = 'translateY(0)'
-                target.style.opacity = '0.8'
-              }}
-            >
-              <Image
-                src="/images/nerdjitsulogotransparent.png"
-                alt="NerdJitsu - Web Development"
-                width={48}
-                height={36}
+              <span style={{ opacity: 0.9 }}>| Designed & built by</span>
+              <a 
+                href="https://www.nerdjitsu.com.au" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 style={{
-                  objectFit: 'contain'
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  transition: 'transform 0.3s ease, opacity 0.3s ease',
+                  opacity: 0.85
                 }}
-              />
-            </a>
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLElement
+                  target.style.transform = 'translateY(-2px)'
+                  target.style.opacity = '1'
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLElement
+                  target.style.transform = 'translateY(0)'
+                  target.style.opacity = '0.85'
+                }}
+              >
+                <Image
+                  src="/images/nerdjitsulogotransparent.png"
+                  alt="NerdJitsu - Web Development"
+                  width={48}
+                  height={36}
+                  style={{
+                    objectFit: 'contain'
+                  }}
+                />
+              </a>
+            </p>
           </div>
           
           <div style={{
