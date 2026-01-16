@@ -10,16 +10,16 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main style={{ minHeight: '100vh' }}>
+    <>
       <Header />
       <Hero />
-      <Programs />
       <About />
+      <Programs />
       <WhyChooseUs />
       <Testimonials />
       <ClassSchedule />
       <Contact />
       <Footer />
-    </main>
+    </>
   )
 }

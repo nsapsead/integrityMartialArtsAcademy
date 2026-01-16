@@ -42,15 +42,14 @@ const Hero = () => {
       <div style={{
         position: 'absolute',
         inset: 0,
-        backgroundImage: 'url("/images/hero-background-alt.jpg")',
+        backgroundImage: 'url("/images/hero_background2.jpeg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        opacity: 0.5
+        backgroundRepeat: 'no-repeat'
       }}>
         {/* SEO-optimized hidden image for search engines */}
         <Image 
-          src="/images/hero-background-alt.jpg" 
+          src="/images/hero_background2.jpeg" 
           alt="Integrity Martial Arts Academy Eltham - Brazilian Jiu Jitsu training facility with students practicing martial arts techniques in modern gym setting"
           width={1}
           height={1}
@@ -68,7 +67,7 @@ const Hero = () => {
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'linear-gradient(135deg, rgba(29, 48, 29, 0.6) 0%, rgba(15, 26, 15, 0.6) 100%)'
+        background: 'linear-gradient(135deg, rgba(29, 48, 29, 0.3) 0%, rgba(15, 26, 15, 0.3) 100%)'
       }}></div>
 
       {/* Special Offer Banner - Hidden on Mobile */}
@@ -183,6 +182,21 @@ const Hero = () => {
         padding: '0 1rem',
         marginTop: isMobile ? '120px' : '180px' // Reduced margin on mobile since banner is hidden
       }}>
+        {/* Blurred card behind text */}
+        <div style={{
+          position: 'absolute',
+          top: '-2rem',
+          left: '-2rem',
+          right: '-2rem',
+          bottom: '-2rem',
+          background: 'rgba(15, 26, 15, 0.4)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          borderRadius: '20px',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          zIndex: -1,
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+        }}></div>
               <h1 style={{
                 fontSize: 'clamp(3rem, 8vw, 6rem)',
                 fontWeight: 'bold',
