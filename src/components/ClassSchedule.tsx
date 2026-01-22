@@ -62,7 +62,7 @@ const ClassSchedule = () => {
           transition: 'all 0.6s ease 0.4s'
         }}>
           <Image 
-            src="/images/Timetable No Logo.png"
+            src="/images/Jan26TimetableNoLogo.png"
             alt="Integrity Martial Arts Academy Class Schedule Timetable - Eltham BJJ and Martial Arts Classes"
             width={800}
             height={600}
