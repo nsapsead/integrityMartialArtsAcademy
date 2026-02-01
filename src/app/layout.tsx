@@ -131,8 +131,8 @@ export default function RootLayout({
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Kids Martial Arts",
-            "description": "Martial arts training for children ages 3-6"
+            "name": "Kids & Teens Brazilian Jiu Jitsu",
+            "description": "Focused classes catering to targeted age groups (3-6, 7-10, 11-14). Build confidence, discipline, and respect while learning self-defense in a fun, safe environment."
           }
         },
         {
@@ -147,8 +147,8 @@ export default function RootLayout({
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Adult BJJ",
-            "description": "Brazilian Jiu Jitsu training for adults"
+            "name": "Brazilian Jiu Jitsu Fundamentals",
+            "description": "Learn the art of ground fighting and self-defense with Craig Donaldson's expert instruction. Ages 15+"
           }
         },
         {

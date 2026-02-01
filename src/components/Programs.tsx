@@ -5,16 +5,16 @@ import Image from 'next/image'
 const Programs = () => {
   const programs = [
     {
-      title: "Kids Martial Arts",
-      ages: "Ages 5-12",
-      description: "Build confidence, discipline, and respect while learning self-defense in a fun, safe environment.",
+      title: "Kids & Teens Brazilian Jiu Jitsu",
+      ages: "Ages 3+",
+      description: "Focused classes catering to targeted age groups (3-6, 7-10, 11-14). Build confidence, discipline, and respect while learning self-defense in a fun, safe environment.",
       features: ["Discipline & respect", "Confidence building", "Basic self-defense", "Physical fitness"],
       image: "/images/integrity-style-kids.png",
       color: "from-green-400 to-green-600"
     },
     {
-      title: "Brazilian Jiu Jitsu",
-      ages: "Ages 4+",
+      title: "Brazilian Jiu Jitsu Fundamentals",
+      ages: "Ages 15+",
       description: "Learn the art of ground fighting and self-defense with Craig Donaldson's expert instruction.",
       features: ["Ground fighting", "Self-defense", "Physical fitness", "Mental discipline"],
       image: "/images/integrity-style-bjj.png",
@@ -94,7 +94,9 @@ const Programs = () => {
               border: '1px solid rgba(49, 191, 49, 0.1)',
               position: 'relative',
               overflow: 'hidden',
-              minHeight: '280px'
+              minHeight: '450px',
+              display: 'flex',
+              flexDirection: 'column'
             }}
             onMouseEnter={(e) => {
               const target = e.target as HTMLElement
@@ -151,7 +153,7 @@ const Programs = () => {
               <div style={{
                 position: 'relative',
                 zIndex: '3',
-                height: '100%',
+                flex: 1,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between'

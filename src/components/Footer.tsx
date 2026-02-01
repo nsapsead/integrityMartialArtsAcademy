@@ -14,9 +14,9 @@ const Footer = () => {
   ]
 
   const programs = [
-    { name: 'Kids Martial Arts', href: '#programs' },
+    { name: 'Kids & Teens Brazilian Jiu Jitsu', href: '#programs' },
     { name: 'Teen Martial Arts', href: '#programs' },
-    { name: 'Adult BJJ', href: '#programs' },
+    { name: 'Brazilian Jiu Jitsu Fundamentals', href: '#programs' },
     { name: 'Integrity Combatives', href: '#programs' },
     { name: 'Muay Thai', href: '#programs' },
     { name: 'Private Lessons', href: '#programs' }
