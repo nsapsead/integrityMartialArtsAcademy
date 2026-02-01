@@ -6,6 +6,7 @@ import Image from 'next/image'
 const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [isMinimized, setIsMinimized] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -302,250 +303,352 @@ const Hero = () => {
 
 
       {/* Desktop Floating Special Offer Popup */}
-      {isScrolled && !isMobile && (
-        <div style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
-          color: 'white',
-          padding: '1.755rem',
-          borderRadius: '12px',
-          boxShadow: '0 6px 20px rgba(255, 107, 53, 0.4)',
-          zIndex: 1000,
-          maxWidth: '409px',
-          minWidth: '351px',
-          animation: 'slideInUp 0.5s ease-out, pulse 2s ease-in-out infinite 1s',
-          border: '2px solid #ff4500',
-          cursor: 'pointer'
-        }}
-        onClick={() => {
-          window.open('https://sparkpages.io/?i=_e0zb', '_blank')
-        }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.585rem',
-            marginBottom: '0.8775rem'
-          }}>
-            <span style={{ fontSize: '1.4625rem' }}>🔥</span>
-            <span style={{ 
-              fontSize: '1.17rem',
-              fontWeight: 'bold',
-              textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)'
-            }}>
-              LIMITED TIME
-            </span>
-          </div>
-          
-          <div style={{
-            textAlign: 'center',
-            marginBottom: '0.8775rem'
-          }}>
-            <div style={{
-              fontSize: '2.0475rem',
-              fontWeight: 'bold',
-              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
-              marginBottom: '0.2925rem'
-            }}>
-              5 CLASSES
+      {!isMobile && (isScrolled || isMinimized) && (
+        <>
+          {/* Minimized Pill */}
+          {isMinimized ? (
+            <div
+              onClick={() => setIsMinimized(false)}
+              style={{
+                position: 'fixed',
+                bottom: '20px',
+                right: '20px',
+                background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
+                color: 'white',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '50px',
+                boxShadow: '0 4px 15px rgba(255, 107, 53, 0.4)',
+                zIndex: 1000,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                border: '2px solid #ff4500',
+                transition: 'all 0.3s ease',
+                animation: 'pulse 2s ease-in-out infinite'
+              }}
+              onMouseEnter={(e) => {
+                const target = e.target as HTMLElement
+                target.style.transform = 'scale(1.05)'
+                target.style.boxShadow = '0 6px 20px rgba(255, 107, 53, 0.5)'
+              }}
+              onMouseLeave={(e) => {
+                const target = e.target as HTMLElement
+                target.style.transform = 'scale(1)'
+                target.style.boxShadow = '0 4px 15px rgba(255, 107, 53, 0.4)'
+              }}
+            >
+              <span style={{ fontSize: '1.25rem' }}>🔥</span>
+              <span style={{ 
+                fontSize: '0.9rem',
+                fontWeight: 'bold',
+                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
+                whiteSpace: 'nowrap'
+              }}>
+                Special Offer, only $25
+              </span>
             </div>
+          ) : (
+            /* Expanded Popup */
             <div style={{
-              fontSize: '1.17rem',
-              marginBottom: '0.2925rem'
-            }}>
-              for just
-            </div>
-            <div style={{
-              fontSize: '2.925rem',
-              fontWeight: 'bold',
-              color: '#ffeb3b',
-              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-              animation: 'bounce 1s ease-in-out infinite'
-            }}>
-              $25
-            </div>
-          </div>
-
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.9)',
-            color: '#ff6b35',
-            padding: '1.35rem 2.7rem',
-            borderRadius: '22.5px',
-            textAlign: 'center',
-            fontWeight: 'bold',
-            fontSize: '1.8rem',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-            transition: 'all 0.3s ease'
-          }}
-          onMouseEnter={(e) => {
-            const target = e.target as HTMLElement
-            target.style.background = '#ff6b35'
-            target.style.color = 'white'
-          }}
-          onMouseLeave={(e) => {
-            const target = e.target as HTMLElement
-            target.style.background = 'rgba(255, 255, 255, 0.9)'
-            target.style.color = '#ff6b35'
-          }}>
-            CLAIM NOW!
-          </div>
-
-          {/* Close button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation()
-              setIsScrolled(false)
-            }}
-            style={{
-              position: 'absolute',
-              top: '15px',
-              right: '15px',
-              background: 'rgba(255, 255, 255, 0.2)',
-              border: 'none',
+              position: 'fixed',
+              bottom: '20px',
+              right: '20px',
+              background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
               color: 'white',
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              cursor: 'pointer',
-              fontSize: '20px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
+              padding: '1.755rem',
+              borderRadius: '12px',
+              boxShadow: '0 6px 20px rgba(255, 107, 53, 0.4)',
+              zIndex: 1000,
+              maxWidth: '409px',
+              minWidth: '351px',
+              animation: 'slideInUp 0.5s ease-out, pulse 2s ease-in-out infinite 1s',
+              border: '2px solid #ff4500',
+              cursor: 'pointer'
             }}
-            onMouseEnter={(e) => {
-              const target = e.target as HTMLElement
-              target.style.background = 'rgba(255, 255, 255, 0.3)'
-            }}
-            onMouseLeave={(e) => {
-              const target = e.target as HTMLElement
-              target.style.background = 'rgba(255, 255, 255, 0.2)'
-            }}
-          >
-            ×
-          </button>
-        </div>
+            onClick={() => {
+              window.open('https://sparkpages.io/?i=_e0zb', '_blank')
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.585rem',
+                marginBottom: '0.8775rem'
+              }}>
+                <span style={{ fontSize: '1.4625rem' }}>🔥</span>
+                <span style={{ 
+                  fontSize: '1.17rem',
+                  fontWeight: 'bold',
+                  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)'
+                }}>
+                  LIMITED TIME
+                </span>
+              </div>
+              
+              <div style={{
+                textAlign: 'center',
+                marginBottom: '0.8775rem'
+              }}>
+                <div style={{
+                  fontSize: '2.0475rem',
+                  fontWeight: 'bold',
+                  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
+                  marginBottom: '0.2925rem'
+                }}>
+                  5 CLASSES
+                </div>
+                <div style={{
+                  fontSize: '1.17rem',
+                  marginBottom: '0.2925rem'
+                }}>
+                  for just
+                </div>
+                <div style={{
+                  fontSize: '2.925rem',
+                  fontWeight: 'bold',
+                  color: '#ffeb3b',
+                  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+                  animation: 'bounce 1s ease-in-out infinite'
+                }}>
+                  $25
+                </div>
+              </div>
+
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.9)',
+                color: '#ff6b35',
+                padding: '1.35rem 2.7rem',
+                borderRadius: '22.5px',
+                textAlign: 'center',
+                fontWeight: 'bold',
+                fontSize: '1.8rem',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                const target = e.target as HTMLElement
+                target.style.background = '#ff6b35'
+                target.style.color = 'white'
+              }}
+              onMouseLeave={(e) => {
+                const target = e.target as HTMLElement
+                target.style.background = 'rgba(255, 255, 255, 0.9)'
+                target.style.color = '#ff6b35'
+              }}>
+                CLAIM NOW!
+              </div>
+
+              {/* Minimize button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setIsMinimized(true)
+                }}
+                style={{
+                  position: 'absolute',
+                  top: '15px',
+                  right: '15px',
+                  background: 'rgba(255, 255, 255, 0.2)',
+                  border: 'none',
+                  color: 'white',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  cursor: 'pointer',
+                  fontSize: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLElement
+                  target.style.background = 'rgba(255, 255, 255, 0.3)'
+                  target.style.transform = 'scale(1.1)'
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLElement
+                  target.style.background = 'rgba(255, 255, 255, 0.2)'
+                  target.style.transform = 'scale(1)'
+                }}
+              >
+                ×
+              </button>
+            </div>
+          )}
+        </>
       )}
 
       {/* Mobile Floating Special Offer Popup - Always visible on mobile */}
       {isMobile && (
-        <div style={{
-          position: 'fixed',
-          bottom: '0',
-          left: '0',
-          right: '0',
-          background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
-          color: 'white',
-          padding: '1rem',
-          zIndex: 1000,
-          animation: 'slideInUp 0.5s ease-out, pulse 2s ease-in-out infinite 1s',
-          borderTop: '3px solid #ff4500',
-          boxShadow: '0 -4px 20px rgba(255, 107, 53, 0.4)',
-          cursor: 'pointer'
-        }}
-        onClick={() => {
-          window.open('https://sparkpages.io/?i=_e0zb', '_blank')
-        }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            maxWidth: '100%'
-          }}>
-            {/* Left side - Offer details */}
+        <>
+          {/* Minimized Pill */}
+          {isMinimized ? (
+            <div
+              onClick={() => setIsMinimized(false)}
+              style={{
+                position: 'fixed',
+                bottom: '20px',
+                right: '20px',
+                background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
+                color: 'white',
+                padding: '0.75rem 1.25rem',
+                borderRadius: '50px',
+                boxShadow: '0 4px 15px rgba(255, 107, 53, 0.4)',
+                zIndex: 1000,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                border: '2px solid #ff4500',
+                transition: 'all 0.3s ease',
+                animation: 'pulse 2s ease-in-out infinite'
+              }}
+              onMouseEnter={(e) => {
+                const target = e.target as HTMLElement
+                target.style.transform = 'scale(1.05)'
+                target.style.boxShadow = '0 6px 20px rgba(255, 107, 53, 0.5)'
+              }}
+              onMouseLeave={(e) => {
+                const target = e.target as HTMLElement
+                target.style.transform = 'scale(1)'
+                target.style.boxShadow = '0 4px 15px rgba(255, 107, 53, 0.4)'
+              }}
+            >
+              <span style={{ fontSize: '1.25rem' }}>🔥</span>
+              <span style={{ 
+                fontSize: '0.85rem',
+                fontWeight: 'bold',
+                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
+                whiteSpace: 'nowrap'
+              }}>
+                Special Offer
+              </span>
+            </div>
+          ) : (
+            /* Expanded Popup */
             <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-              flex: 1
+              position: 'fixed',
+              bottom: '0',
+              left: '0',
+              right: '0',
+              background: 'linear-gradient(135deg, #ff6b35, #f7931e)',
+              color: 'white',
+              padding: '1rem',
+              zIndex: 1000,
+              animation: 'slideInUp 0.5s ease-out, pulse 2s ease-in-out infinite 1s',
+              borderTop: '3px solid #ff4500',
+              boxShadow: '0 -4px 20px rgba(255, 107, 53, 0.4)',
+              cursor: 'pointer'
+            }}
+            onClick={() => {
+              window.open('https://sparkpages.io/?i=_e0zb', '_blank')
             }}>
-              <span style={{ fontSize: '1.5rem' }}>🔥</span>
-              <div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                maxWidth: '100%'
+              }}>
+                {/* Left side - Offer details */}
                 <div style={{
-                  fontSize: '0.9rem',
-                  fontWeight: 'bold',
-                  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
-                  marginBottom: '0.25rem'
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                  flex: 1
                 }}>
-                  LIMITED TIME
+                  <span style={{ fontSize: '1.5rem' }}>🔥</span>
+                  <div>
+                    <div style={{
+                      fontSize: '0.9rem',
+                      fontWeight: 'bold',
+                      textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
+                      marginBottom: '0.25rem'
+                    }}>
+                      LIMITED TIME
+                    </div>
+                    <div style={{
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                      textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)'
+                    }}>
+                      5 CLASSES for just <span style={{
+                        color: '#ffeb3b',
+                        textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+                        animation: 'bounce 1s ease-in-out infinite'
+                      }}>$25</span>
+                    </div>
+                  </div>
                 </div>
+                
+                {/* Right side - CTA button */}
                 <div style={{
-                  fontSize: '1.1rem',
+                  background: 'rgba(255, 255, 255, 0.9)',
+                  color: '#ff6b35',
+                  padding: '0.75rem 1.25rem',
+                  borderRadius: '20px',
                   fontWeight: 'bold',
-                  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)'
+                  fontSize: '0.9rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  transition: 'all 0.3s ease',
+                  whiteSpace: 'nowrap',
+                  marginLeft: '0.5rem'
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLElement
+                  target.style.background = 'rgba(255, 255, 255, 1)'
+                  target.style.transform = 'scale(1.05)'
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLElement
+                  target.style.background = 'rgba(255, 255, 255, 0.9)'
+                  target.style.transform = 'scale(1)'
                 }}>
-                  5 CLASSES for just <span style={{
-                    color: '#ffeb3b',
-                    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
-                    animation: 'bounce 1s ease-in-out infinite'
-                  }}>$25</span>
+                  CLAIM NOW!
                 </div>
               </div>
+              
+              {/* Minimize button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setIsMinimized(true)
+                }}
+                style={{
+                  position: 'absolute',
+                  top: '8px',
+                  right: '8px',
+                  background: 'rgba(255, 255, 255, 0.2)',
+                  border: 'none',
+                  color: 'white',
+                  width: '28px',
+                  height: '28px',
+                  borderRadius: '50%',
+                  cursor: 'pointer',
+                  fontSize: '16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLElement
+                  target.style.background = 'rgba(255, 255, 255, 0.3)'
+                  target.style.transform = 'scale(1.1)'
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLElement
+                  target.style.background = 'rgba(255, 255, 255, 0.2)'
+                  target.style.transform = 'scale(1)'
+                }}
+              >
+                ×
+              </button>
             </div>
-            
-            {/* Right side - CTA button */}
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.9)',
-              color: '#ff6b35',
-              padding: '0.75rem 1.25rem',
-              borderRadius: '20px',
-              fontWeight: 'bold',
-              fontSize: '0.9rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.5px',
-              transition: 'all 0.3s ease',
-              whiteSpace: 'nowrap',
-              marginLeft: '0.5rem'
-            }}
-            onMouseEnter={(e) => {
-              const target = e.target as HTMLElement
-              target.style.background = 'rgba(255, 255, 255, 1)'
-              target.style.transform = 'scale(1.05)'
-            }}
-            onMouseLeave={(e) => {
-              const target = e.target as HTMLElement
-              target.style.background = 'rgba(255, 255, 255, 0.9)'
-              target.style.transform = 'scale(1)'
-            }}>
-              CLAIM NOW!
-            </div>
-          </div>
-          
-          {/* Close button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation()
-              setIsScrolled(false)
-            }}
-            style={{
-              position: 'absolute',
-              top: '8px',
-              right: '8px',
-              background: 'rgba(255, 255, 255, 0.2)',
-              border: 'none',
-              color: 'white',
-              width: '28px',
-              height: '28px',
-              borderRadius: '50%',
-              cursor: 'pointer',
-              fontSize: '16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-            onMouseEnter={(e) => {
-              const target = e.target as HTMLElement
-              target.style.background = 'rgba(255, 255, 255, 0.3)'
-            }}
-            onMouseLeave={(e) => {
-              const target = e.target as HTMLElement
-              target.style.background = 'rgba(255, 255, 255, 0.2)'
-            }}
-          >
-            ×
-          </button>
-        </div>
+          )}
+        </>
       )}
 
     </section>

@@ -95,20 +95,27 @@ a {
 
 /* Programs grid responsive behavior */
 .programs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.programs-grid > * {
+  flex: 0 1 calc(33.333% - 1rem);
+  min-width: 280px;
+  max-width: 400px;
 }
 
 @media (max-width: 1024px) {
-  .programs-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .programs-grid > * {
+    flex: 0 1 calc(50% - 0.75rem);
   }
 }
 
 @media (max-width: 768px) {
-  .programs-grid {
-    grid-template-columns: 1fr;
+  .programs-grid > * {
+    flex: 0 1 100%;
   }
 }

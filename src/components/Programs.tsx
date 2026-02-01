@@ -8,13 +8,13 @@ const Programs = () => {
       title: "Kids Martial Arts",
       ages: "Ages 5-12",
       description: "Build confidence, discipline, and respect while learning self-defense in a fun, safe environment.",
-      features: ["Basic self-defense", "Confidence building", "Discipline & respect", "Physical fitness"],
+      features: ["Discipline & respect", "Confidence building", "Basic self-defense", "Physical fitness"],
       image: "/images/integrity-style-kids.png",
       color: "from-green-400 to-green-600"
     },
     {
       title: "Brazilian Jiu Jitsu",
-      ages: "Ages 18+",
+      ages: "Ages 4+",
       description: "Learn the art of ground fighting and self-defense with Craig Donaldson's expert instruction.",
       features: ["Ground fighting", "Self-defense", "Physical fitness", "Mental discipline"],
       image: "/images/integrity-style-bjj.png",
@@ -43,14 +43,6 @@ const Programs = () => {
       features: ["Complete skill set", "Competition training", "Physical conditioning", "Mental toughness"],
       image: "/images/integrity-style-mma.png",
       color: "from-green-500 to-green-700"
-    },
-    {
-      title: "Women's Self-Defense",
-      ages: "Ages 16+",
-      description: "Specialized self-defense training designed specifically for women in a supportive environment.",
-      features: ["Practical techniques", "Confidence building", "Situational awareness", "Empowerment"],
-      image: "/images/integrity-style-womens-self-defence.png",
-      color: "from-green-600 to-green-800"
     }
   ]
 
@@ -202,7 +194,8 @@ const Programs = () => {
                   display: 'flex',
                   flexWrap: 'wrap',
                   gap: '0.5rem',
-                  marginBottom: '1.5rem'
+                  marginBottom: '1.5rem',
+                  justifyContent: 'center'
                 }}>
                   {program.features.map((feature, featureIndex) => (
                     <span key={featureIndex} style={{
